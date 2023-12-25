@@ -16,7 +16,7 @@
     name: "{{ runc_package_name }}"
     state: absent
   when:
-    - not (is_ostree or (ansible_distribution == "Flatcar Container Linux by Kinvolk") or (ansible_distribution == "Flatcar"))
+    - not (is_ostree or (ansible_distribution == "Flatcar Container Linux by Kinvolk") or (ansible_distribution == "Flatcar") or (ansible_distribution == "Archlinux"))
 
 - name: Runc | Download runc binary
   include_tasks: "../../../download/tasks/download_file.yml"
